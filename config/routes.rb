@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'movies/index'
+
   get 'test', to: "static_pages#test"
   #makes static_pagestest not something that must be repeated
-
+  get 'about', to: "static_pages#about"
   root 'static_pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
