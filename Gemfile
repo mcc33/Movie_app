@@ -15,6 +15,7 @@ gem 'font-awesome-sass', '~> 4.4.0'
 
 #Other
 gem 'turbolinks'
+gem 'enceladus'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -26,6 +27,7 @@ group :development, :test do
   gem 'better_errors'
   gem 'annotate'
   gem 'spring'
+  gem 'devise'
 end
 
 group :production do
