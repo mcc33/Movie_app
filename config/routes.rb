@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'movies/index'
 
   get 'test', to: "static_pages#test"
   #makes static_pagestest not something that must be repeated
   get 'about', to: "static_pages#about"
   root 'static_pages#home'
+
+  resources :movies
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
