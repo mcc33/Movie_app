@@ -2,8 +2,8 @@
 <% collection = Enceladus::Movie.popular %>
 <h1> <%= collection.first.title %> </h1>
 <h2> <%= collection.last.title %> </h2>
-<h3> <%= image_tag(collection.first.poster_path,class: 'img thumbnail') %> </h3>
+<h3> <%= image_tag(collection.first.poster_path, class: 'img') %> </h3>
 <% #NEED to figure out how to get images. Specific problem here is a broken link. It dispalsy a partial url. also need to discover how to deal with connection error to the movie db %>
 
 
-<!-- Test page to determine that the Enceladus gem works properly !-->
+<!-- Test page to determine that the Enceladus gem works properly. OMDB API Key: 5c3a5c44  !-->
