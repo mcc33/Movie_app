@@ -2,7 +2,7 @@
 <div class="panel-body">
   <%= simple_form_for @movie do |f| %>
     <%= f.input :title, label: false, input_html: {placeholder: "Movie Name"} %>
-    <%= f.input :year, label: false, as: :text, input_html: {placeholder: "Artist Bio"}%>
+    <%= f.input :year, label: false, as: :text, input_html: {placeholder: "Year"}%>
     <%= f.submit "Submit".html_safe, class: "btn btn-lg btn-danger"%>
   <%end %>
 </div>
