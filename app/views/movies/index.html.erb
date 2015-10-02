@@ -1,2 +1,8 @@
 <h1>Movies</h1>
 <p>Search and Find Movies </p>
+<%= @movies.each do |movie| %>
+  <tr>
+    <td> <%= movie.title %> </td>
+  </tr>
+<% end %>
+<%= link_to "Add new movie", new_movie_path, class: 'btn'  %>
