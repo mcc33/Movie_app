@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
 
 #Index method to show all the instances of movies. I want this to pull form Enceladus.
   def index
-    @movies = Movie.all
+    @movies = $popular_movies.all
   end
 #Show method to show specific instances of movies
   def show
@@ -35,8 +35,12 @@ class MoviesController < ApplicationController
         render "edit"
       end
   end
+$popular_movies = Enceladus::Movie.popular
+$base_url = "http://image.tmdb.org/t/p/w370"
 
-  $popular_movies = Enceladus::Movie.popular
+#$popular_movies.all.each do |movie|
+  #movie.title
+     #end
 
   private
 

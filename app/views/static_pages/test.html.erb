@@ -5,5 +5,11 @@
 <h2> <%= collection.last.title %> </h2>
 <h3> <%= image_tag($base_url << poster_url, class: 'img img-thumbnail') %> </h3>
 <h4> <%= movie_example.genres %> </h4>
+ <% collection.all.each do |movie| %>
+ <%= movie.title %>
+ <% end %>
+
+<!-- collection.all will pull an array of popular movies. need to iterate through the array. -->
+
 
 <!--Next, create methods to automatically pull posters from movies. Still have to sort by genre later, add user functionality, etc etc. -->

@@ -1,21 +1,9 @@
 <h1>Movies</h1>
-<p>Search and Find Movies </p>
-
-<div class="col-md-12">
-  <div class="table-responsive">
-    <table class="table table-hover"
-<% @movies.each do |movie| %>
-  <tr>
-    <td> <%= movie.title %> </td>
-    <td>
-        <%=link_to 'Show', movie_path(movie), class: 'btn btn-default btn-xs' %>
-        <%= link_to 'Edit', edit_movie_path(movie), class: 'btn btn-success btn-xs' %>
-  </tr>
-<% end %>
-    </table>
-    <%= link_to "Add new movie", new_movie_path, class: 'btn'  %>
-  </div>
-</div>
+<h2> <% @movies.each do |movie| %>
+<%= movie.title %>
+  <% end %> </h2>
+<!-- The above code should for each instance of popular movies, a list of 20, simply lists the title. Can use this for pictures, year, genres as well.
+ It will likely need to be in the controller. Then find a way to map it to an html table. Look at the music app for pointers on controller & view options -->
 
 <body>
   <div class="row">
@@ -24,7 +12,7 @@
       </div>
       <div class="col-md-4 text-center">
           <div class="thumbnail">
-              <img class="img-responsive" src="<%= $base_url << $popular_movies.first.backdrop_path%>" alt="">
+              <img class="img-responsive" src="<%= $base_url << $popular_movies.first.backdrop_path %>" alt="<%= $popular_movies.first.title %>">
               <div class="caption">
                   <h3> <%= $popular_movies.first.title %> <br>
                   </h3>
@@ -41,23 +29,22 @@
           </div>
       </div>
       <div class="col-md-4 text-center">
-          <div class="thumbnail">
-              <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-              <div class="caption">
-                  <h3>John Smith<br>
-                      <small>Job Title</small>
-                  </h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-                  <ul class="list-inline">
-                      <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
-                      </li>
-                      <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
-                      </li>
-                      <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
+        <div class="thumbnail">
+            <img class="img-responsive" src="<%= $base_url << $popular_movies.last.backdrop_path %>" alt="<%= $popular_movies.last.title %>">
+            <div class="caption">
+                <h3> <%= $popular_movies.last.title %> <br>
+                </h3>
+                <p><%= $popular_movies.last.overview %> </p>
+                <ul class="list-inline">
+                    <li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
       </div>
       <div class="col-md-4 text-center">
           <div class="thumbnail">
@@ -135,5 +122,6 @@
               </div>
           </div>
       </div>
-      <
+</div>
+
 </body>
