@@ -1,9 +1,7 @@
 <% Enceladus.connect("58f45bf23250960a8d2a2d767d2b9d2e", { include_image_language: "pt", language: "en,null", include_adult: true }) %>
 <% collection = Enceladus::Movie.popular %>
+<% base_url = "http://image.tmdb.org/t/p/w500" %>
+<% poster_url = collection.last.poster_path %>
 <h1> <%= collection.first.title %> </h1>
 <h2> <%= collection.last.title %> </h2>
-<h3> <%= image_tag(collection.first.poster_path, class: 'img') %> </h3>
-<% #NEED to figure out how to get images. Specific problem here is a broken link. It dispalsy a partial url. also need to discover how to deal with connection error to the movie db %>
-
-
-<!-- Test page to determine that the Enceladus gem works properly. OMDB API Key: 5c3a5c44  !-->
+<h3> <%= image_tag(base_url << poster_url, class: 'img img-thumbnail') %> </h3>
