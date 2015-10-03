@@ -6,9 +6,6 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
-<!-- Gem support to be available to the entire app -->
-
-  <% Enceladus.connect("58f45bf23250960a8d2a2d767d2b9d2e", { include_image_language: "pt", language: "en,null", include_adult: true }) %>
 
 </head>
 <body>
@@ -51,4 +48,22 @@
 <%= yield %>
 
 </body>
+
+<!-- Footer -->
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Your Website 2014</p>
+        </div>
+    </div>
+</footer>
+
+</div>
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 </html>

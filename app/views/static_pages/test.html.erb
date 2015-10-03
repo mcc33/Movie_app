@@ -1,7 +1,9 @@
-<% Enceladus.connect("58f45bf23250960a8d2a2d767d2b9d2e", { include_image_language: "pt", language: "en,null", include_adult: true }) %>
 <% collection = Enceladus::Movie.popular %>
-<% base_url = "http://image.tmdb.org/t/p/w500" %>
 <% poster_url = collection.last.poster_path %>
+<% movie_example = Enceladus::Movie.find(150) %>
 <h1> <%= collection.first.title %> </h1>
 <h2> <%= collection.last.title %> </h2>
-<h3> <%= image_tag(base_url << poster_url, class: 'img img-thumbnail') %> </h3>
+<h3> <%= image_tag($base_url << poster_url, class: 'img img-thumbnail') %> </h3>
+<h4> <%= movie_example.genres %> </h4>
+
+<!--Next, create methods to automatically pull posters from movies. Still have to sort by genre later, add user functionality, etc etc. -->

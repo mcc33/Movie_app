@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 
 
-#Index method to show all the instances of movies
+#Index method to show all the instances of movies. I want this to pull form Enceladus.
   def index
     @movies = Movie.all
   end
@@ -36,6 +36,7 @@ class MoviesController < ApplicationController
       end
   end
 
+  $popular_movies = Enceladus::Movie.popular
 
   private
 
