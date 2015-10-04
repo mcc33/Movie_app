@@ -24,4 +24,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
          has_many :movies
+         #Create a new model called user_movies, and create attributes the same as tmdb lists them.
+         #Pull the data from tmdb ot create instances of the movies in a local database. Or is it possible
+         #TO save... has_many :user_movies through :movies.
 end

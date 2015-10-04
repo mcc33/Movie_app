@@ -15,8 +15,7 @@ class MoviesController < ApplicationController
   end
 
 $popular_movies = Enceladus::Movie.popular
-
-
+$in_theaters = Enceladus::Movie.now_playing
 #$popular_movies.all.each do |movie|
   #movie.title
      #end
