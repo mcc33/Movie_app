@@ -8,6 +8,7 @@
       <div class="col-md-4 text-center">
         <div class="thumbnail">
             <%= image_tag("http://image.tmdb.org/t/p/w370" << movie.poster_path, class: 'img-responsive') %>
+            <!-- have to update the above line to include link_to, and find a way to properly link to show page per movie id -->
               <div class="caption">
                   <h3> <%= movie.title %> <br> </h3>
                   <p><%= movie.overview %> </p>

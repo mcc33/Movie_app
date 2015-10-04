@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
   end
 #Show method to show specific instances of movies from Enceladus
   def show
-    @movie = Movie.find(params[:id])
+    @movie = Enceladus::Movie.find(params[:id])
   end
 
   def edit
@@ -24,7 +24,7 @@ $popular_movies = Enceladus::Movie.popular
 
 #WCaptures movie attributes via a form and sets them to the controller. Eventually won't permit title and year as they will be passed it and users will not be able to change.
   def movie_params
-    params.require(:movie).permit(:title, :year)
+    params.require(:movie)
   end
 
 end
