@@ -5,38 +5,16 @@ class MoviesController < ApplicationController
   def index
     @movies = $popular_movies.all
   end
-#Show method to show specific instances of movies
+#Show method to show specific instances of movies from Enceladus
   def show
     @movie = Movie.find(params[:id])
-  end
-#Method to collect data to create a new instance of movie. this will be passed the attributes from the movie db gem.
-  def new
-    @movie = Movie.new
-  end
-#Create a new instance of movie using passed attributes
-  def create
-    @movie = Movie.new(movie_params)
-    if @movie.save
-      redirect_to movies_path
-    else
-      render "new"
-    end
   end
 
   def edit
     @movie = Movie.find(params[:id])
   end
 
-  def update
-      @movie = Movie.find(params[:id])
-      if @movie.update(movie_params)
-        redirect_to movie_path(@movie), notice: "Movie successfully updated"
-      else
-        render "edit"
-      end
-  end
 $popular_movies = Enceladus::Movie.popular
-$base_url = "http://image.tmdb.org/t/p/w370"
 
 #$popular_movies.all.each do |movie|
   #movie.title
