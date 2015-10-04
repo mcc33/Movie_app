@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :movies
   resources :users, :only  => [:show]
 
-  get 'movies/index'
-
+  get 'movies' => 'movies#index'
+  get 'movies/:id', to: 'movies#show', as: 'movie'
   get 'test', to: "static_pages#test"
   #makes static_pagestest not something that must be repeated
   get 'about', to: "static_pages#about"

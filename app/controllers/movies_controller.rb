@@ -16,7 +16,9 @@ class MoviesController < ApplicationController
 
 $popular_movies = Enceladus::Movie.popular
 
+
 #$popular_movies.all.each do |movie|
   #movie.title
      #end
+
 end
