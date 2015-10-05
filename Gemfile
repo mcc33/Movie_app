@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
-gem 'sqlite3'
 
 #Front End Tools
 gem 'sass-rails', '~> 5.0'
@@ -28,9 +27,11 @@ group :development, :test do
   gem 'annotate'
   gem 'spring'
   gem 'devise'
+  gem 'sqlite3'
+
 end
 
 group :production do
-  #gem 'pg'
-  #gem 'rails_12factor'
+  gem 'pg'
+  gem 'rails_12factor'
 end
