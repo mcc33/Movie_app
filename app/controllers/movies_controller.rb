@@ -10,12 +10,13 @@ class MoviesController < ApplicationController
     @movie = Enceladus::Movie.find(params[:id])
   end
 
-  def edit
-    @movie = Movie.find(params[:id])
+  def add_movie_to_user
+    @user = current_user
+    @movie = Enceladus::Movie.find(params[:id])
+    user.user_movies << @movie
   end
 
 $popular_movies = Enceladus::Movie.popular
-$in_theaters = Enceladus::Movie.now_playing
 #$popular_movies.all.each do |movie|
   #movie.title
      #end
